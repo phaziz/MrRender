@@ -15,7 +15,7 @@
         TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
         0. YOU JUST DO WHAT THE FUCK YOU WANT TO!
 
-        +++ Visit https://github.com/phaziz +++
+        +++ Visit https://github.com/phaziz/MrRender/tree/master +++
 
     ***************************************************************************
     */
