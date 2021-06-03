@@ -128,11 +128,13 @@ class MrRender
 
     private function navigation($ARRAY, $LEVEL): string
     {
+        $REQUEST = $_SERVER['REQUEST_URI'];
+
         if (!empty($ARRAY)) {
             if ($LEVEL > 0) {
-                $RET = '<ul role="menu">';
+                $RET = '<ul class="topnav_' . $LEVEL . '">';
             } else {
-                $RET = '<ul>';
+                $RET = '<ul class="topnav">';
             }
 
             foreach ($ARRAY as $KEY => $VALUE) {
@@ -142,7 +144,14 @@ class MrRender
                     $RET .= $this->navigation($VALUE, $LEVEL);
                     $RET .=  '</li>';
                 } else {
-                    $RET .= '<li><a href="' . self::_BASE_URL . $VALUE['url'] . '">' . $VALUE['name'] . '</a></li>';
+                    $ACTIVE = '';
+                    $REQUEST = trim(str_replace(['/mr-render/', '/'], ['', ''], $REQUEST));
+
+                    if(trim(strtolower($VALUE['name'])) === $REQUEST){
+                        $ACTIVE = 'class="active"';
+                    }
+
+                    $RET .= '<li><a ' . $ACTIVE  . ' href="' . self::_BASE_URL . $VALUE['url'] . '">' . strtoupper($VALUE['name']) . '</a></li>';
                 }
             }
 

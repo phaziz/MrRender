@@ -36,21 +36,9 @@
 			'tpl' => 'info.php'
 		],
 		[
-			'name' => 'Support',
-			'url' => '/mr-render/support/',
-			'tpl' => 'support.php'
-		],
-		'Projekte' => [
-			[
-				'name' => 'Consulting',
-				'url' => '/mr-render/projekte/consulting/',
-				'tpl' => 'projekte_consulting.php'
-			],
-			[
-				'name' => 'Print',
-				'url' => '/mr-render/projekte/print/',
-				'tpl' => 'projekte_print.php'
-			]
+			'name' => 'Consulting',
+			'url' => '/mr-render/consulting/',
+			'tpl' => 'projekte_consulting.php'
 		],
 		[
 			'name' => 'Support',

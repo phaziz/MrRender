@@ -7,6 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{@ PageName @}</title>
 	<link href="{@ CDNLink @}style.css" rel="stylesheet">
+
+	<style>
+
+	</style>
+
 </head>
 
 <body>
@@ -17,10 +22,10 @@
 			{@ Navigation @}
 		</nav>
 
-		<div>
+		<div id="content">
 			<h1>{@ PageName @}</h1>
 			<p>MrRender - Mini-CMS!</p>
-			<p>Download: <a href="https://github.com/phaziz/mini-cms">github.com/phaziz/mini-cms</a></p>
+			<p>Download: <a href="https://github.com/phaziz/MrRender">github.com/phaziz/MrRender</a></p>
 		</div>
 
 	</div>
