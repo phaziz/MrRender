@@ -32,7 +32,7 @@ class MrRender
     const _CACHE_DIRECTORY = '/cache/';
     const _CACHE_TIME = 86400;
     const _CACHE_FILEENDING = '.html';
-    const _CDN_LINK = 'http://localhost/mr-render/content/';
+    const _CDN_LINK = 'http://localhost/mr-render/content_templates/';
     const _404_TPL = '404.php';
     const _ERROR_TPL = 'error.php';
     const _DEBUG = false;
