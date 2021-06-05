@@ -38,7 +38,7 @@
 		[
 			'name' => 'Consulting',
 			'url' => '/mr-render/consulting/',
-			'tpl' => 'projekte_consulting.php'
+			'tpl' => 'consulting.php'
 		],
 		[
 			'name' => 'Support',
