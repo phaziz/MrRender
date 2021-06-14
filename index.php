@@ -1,6 +1,6 @@
 <?php
 
-	/*
+/*
 	***************************************************************************
 
 		DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
@@ -23,4 +23,4 @@
 require_once './routes/routes.php';
 require_once 'MrRender.php';
 
-$APP = new \MrRender\MrRender($ROUTES_ARRAY);
+$APP = new \MrRender\MrRender($routesArray);

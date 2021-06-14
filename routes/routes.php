@@ -24,7 +24,7 @@
 	* App-Route's Definition's
 	*/
 
-	$ROUTES_ARRAY = [
+	$routesArray = [
 		[
 			'name' => 'Startseite',
 			'url' => '/mr-render/',

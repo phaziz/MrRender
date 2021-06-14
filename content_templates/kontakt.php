@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{@ PageName @}</title>
-	<link href="{@ CDNLink @}style.css" rel="stylesheet">
+	<title>{@ pageName @}</title>
+	<link href="{@ cdnLink @}style.css" rel="stylesheet">
 
 	<style>
 
@@ -19,11 +19,11 @@
 	<div class="container">
 
 		<nav role="navigation">
-			{@ Navigation @}
+			{@ navigation @}
 		</nav>
 
 		<div id="content">
-			{@ Content @}
+			{@ content @}
 		</div>
 
 	</div>
