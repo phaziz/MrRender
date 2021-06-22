@@ -1,6 +1,6 @@
 <?php
 
-/*
+	/*
 	***************************************************************************
 
 		DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
@@ -15,13 +15,20 @@
 		TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 		0. YOU JUST DO WHAT THE FUCK YOU WANT TO!
 
-		+++ Visit https://github.com/phaziz/MrRender/tree/master +++
+		+++ Visit https://github.com/phaziz +++
 
 	***************************************************************************
 	*/
 
-require_once './routes/routes.php';
-require_once './plugins/pluginRegistry.php';
-require_once 'MrRender.php';
+    /*
+    * App-Plugins Registry
+    */
 
-$APP = new \MrRender\MrRender($routesArray, $pluginsArray);
+    $pluginsArray = [
+        [
+            'name' => 'infoContent'
+        ],
+		[
+			'name' => 'startseitenContent'
+		]
+    ];

@@ -21,7 +21,7 @@
 */
 
 	/*
-	* App-Route's Definition's
+	* App-Routes Definition
 	*/
 
 	$routesArray = [

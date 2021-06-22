@@ -1,7 +1,6 @@
 <?php header("HTTP/1.0 404 Not Found"); ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,6 @@
 	<title>{@ pageName @}</title>
 	<link href="{@ cdnLink @}style.css" rel="stylesheet">
 </head>
-
 <body>
 	<div class="container">
 		<nav role="navigation">
@@ -24,5 +22,4 @@
 		</div>
 	</div>
 </body>
-
 </html>

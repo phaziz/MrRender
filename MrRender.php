@@ -24,9 +24,11 @@ namespace MrRender;
 
 class MrRender
 {
+
     const baseUrl = 'http://localhost';
     const tplDirectory = '/content_templates';
     const contentDirectory = '/content';
+    const pluginDirectory = '/plugins/';
     const contentFileending = '.php';
     const useCache = false;
     const cacheDirectory = '/cache/';
@@ -37,7 +39,7 @@ class MrRender
     const tplError = 'error.php';
     const debugger = false;
 
-    function __construct($routesArray)
+    function __construct($routesArray, $pluginsArray)
     {
         $flatten = $this->flatten($routesArray);
         $request = $_SERVER['REQUEST_URI'];
@@ -65,6 +67,8 @@ class MrRender
                     self::cdnLink,
                     $this->jsonNavigation($routesArray)
                 ], $tplString);
+
+                $tplString = $this->pluginLoadr($tplString, $pluginsArray);
 
                 if(true === self::debugger && false === self::useCache){
                     $tplString .= $this->debugMrRender($request, $unique);
@@ -104,6 +108,30 @@ class MrRender
                 die();
             }
         }
+    }
+
+    private function pluginLoadr($tplString = '', $pluginsArray = []) : string
+    {
+        $ret = '';
+
+        if('' !== $tplString){
+            foreach($pluginsArray as $plugin){
+                if(file_exists(__DIR__ . self::pluginDirectory . $plugin['name'] . '.php')){
+                    require_once __DIR__ . self::pluginDirectory . $plugin['name'] . '.php';
+                    
+                    $tplString = str_replace('{@ plugin[' . $plugin['name'] . '] @}', $plugin['name'](), $tplString);
+                }
+            }
+
+            $ret = $tplString;
+        }
+
+        return $ret;
+    }
+
+    private function __autoload($className)
+    {
+        require_once __DIR__ . self::pluginDirectory . $className . '.php';
     }
 
     private function flatten($arr): array
@@ -201,4 +229,5 @@ class MrRender
             return '';
         }
     }
+
 }
