@@ -39,7 +39,7 @@ class MrRender
     const tplError = 'error.php';
     const debugger = false;
 
-    function __construct($routesArray, $pluginsArray)
+    function __construct($routesArray = [], $pluginsArray = [])
     {
         $flatten = $this->flatten($routesArray);
         $request = $_SERVER['REQUEST_URI'];
@@ -71,7 +71,7 @@ class MrRender
                 $tplString = $this->pluginLoadr($tplString, $pluginsArray);
 
                 if(true === self::debugger && false === self::useCache){
-                    $tplString .= $this->debugMrRender($request, $unique);
+                    $tplString .= $this->debugMrRender($request, $unique, $pluginsArray);
                 }
 
                 $newCache = $tplString . "\n" . '<!-- MrRender ' . date('Y-m-d, H:i:s') . ' | https://github.com/phaziz -->';
@@ -129,12 +129,7 @@ class MrRender
         return $ret;
     }
 
-    private function __autoload($className)
-    {
-        require_once __DIR__ . self::pluginDirectory . $className . '.php';
-    }
-
-    private function flatten($arr): array
+    private function flatten($arr = []): array
     {
         if (!is_array($arr)) {
             return array($arr);
@@ -149,8 +144,14 @@ class MrRender
         return $RESULT;
     }
 
-    private function debugMrRender($request, $unique): string
+    private function debugMrRender($request = '', $unique = '', $pluginsArray = []): string
     {
+        $pluginString = '';
+
+        foreach($pluginsArray as $plugin){
+            $pluginString .= $plugin['name'] . ' ';
+        }
+
         $tplString  = '';
         $tplString .= '<div style="background:#ff0066;color:#fff;padding: 25px 25px 25px 25px;">';
         $tplString .= '<p><strong>MrRender Debug-Output:</strong></p>';
@@ -167,24 +168,25 @@ class MrRender
         $tplString .=  '<p>cdnLink: ' . self::cdnLink . '</p>';
         $tplString .=  '<p>tpl404: ' . self::tpl404 . '</p>';
         $tplString .=  '<p>tplError: ' . self::tplError . '</p>';
+        $tplString .=  '<p>plugnis: ' . $pluginString . '</p>';
         $tplString .=  '<p>debugger: ' . self::debugger . '</p>';
         $tplString .= '</div>';
 
         return $tplString;
     }
 
-    private function content($what): string
+    private function content($what = null): string
     {
         $ret = '';
 
-        if (file_exists(__DIR__ . self::contentDirectory . '/' . $what . self::contentFileending)) {
+        if (null !== $what && file_exists(__DIR__ . self::contentDirectory . '/' . $what . self::contentFileending)) {
             $ret .= file_get_contents(__DIR__ . self::contentDirectory . '/' . $what . self::contentFileending);
         }
 
         return $ret;
     }
 
-    private function navigation($arr, $level): string
+    private function navigation($arr = [], $level = null): string
     {
         $request = $_SERVER['REQUEST_URI'];
 
@@ -221,7 +223,7 @@ class MrRender
         }
     }
 
-    private function jsonNavigation($arr): String
+    private function jsonNavigation($arr = []): String
     {
         if (!!$arr) {
             return json_encode($arr, true);
