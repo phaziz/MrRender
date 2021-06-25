@@ -1,8 +1,6 @@
 <?php
 
 	/*
-	***************************************************************************
-
 		DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
 		Version 5, 2021
 		Copyright (C) 2021 Christian Becher | phaziz.com <phaziz@gmail.com>
@@ -16,14 +14,11 @@
 		0. YOU JUST DO WHAT THE FUCK YOU WANT TO!
 
 		+++ Visit https://github.com/phaziz +++
-
-	***************************************************************************
 	*/
 
     /*
-    * App-Plugins Registry
+    * Plugins
     */
-
     $pluginsArray = [
         [
             'name' => 'infoContent'

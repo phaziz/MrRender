@@ -1,8 +1,6 @@
 <?php
 
-/*
-	***************************************************************************
-
+	/*
 		DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
 		Version 5, 2021
 		Copyright (C) 2021 Christian Becher | phaziz.com <phaziz@gmail.com>
@@ -16,12 +14,10 @@
 		0. YOU JUST DO WHAT THE FUCK YOU WANT TO!
 
 		+++ Visit https://github.com/phaziz/MrRender/tree/master +++
-
-	***************************************************************************
 	*/
 
-require_once './routes/routes.php';
-require_once './plugins/pluginRegistry.php';
-require_once 'MrRender.php';
+	require_once './routes/routes.php';
+	require_once './plugins/pluginRegistry.php';
+	require_once 'MrRender.php';
 
-$APP = new \MrRender\MrRender($routesArray, $pluginsArray);
+	new \MrRender\MrRender($routesArray, $pluginsArray);
