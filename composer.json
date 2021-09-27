@@ -3,7 +3,7 @@
     "description": "A minimal file-based Content Management System.",
     "keywords": ["MrRender","CMS", "Content Management System", "phaziz"],
     "homepage": "https://github.com/phaziz/MrRender",
-    "license": "DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE",
+    "license": "0BSD",
     "authors": [
         {
             "name": "phaziz",
