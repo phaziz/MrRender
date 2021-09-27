@@ -20,7 +20,7 @@
 
     class MrRender
     {
-        const version = '1.6.25';
+        const version = '1.7.0';
         const baseUrl = 'http://localhost';
         const tplDirectory = '/content_templates';
         const contentDirectory = '/content';

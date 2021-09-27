@@ -16,6 +16,7 @@
 		+++ Visit https://github.com/phaziz/MrRender/tree/master +++
 	*/
 
+	require_once 'vendor/autoload.php';
 	require_once './routes/routes.php';
 	require_once './plugins/pluginRegistry.php';
 	require_once 'MrRender.php';
